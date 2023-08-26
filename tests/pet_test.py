@@ -6,7 +6,7 @@ from models.pet import Pet
 class TestPet(unittest.TestCase):
     
     def setUp (self):
-        self.vet1 = Vet('Sophie Hill', 'Veterinarian', id = 1)
+        self.vet1 = Vet('Sophie', 'Hill', 'Veterinarian', id = 1)
         self.pet1 = Pet('Winnie', '5/7/2017', 'Dog', 'Malcolm Hunter', '01234 567 890', self.vet1, 'Broken tail', id = 2)
 
     def test_pet_has_name (self):
