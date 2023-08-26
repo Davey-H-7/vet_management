@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.vet import Vet
+import pdb
 
 
 # define function called 'save' with input parameter 'vet'
@@ -31,3 +32,14 @@ def select_all():
 def delete_all():
     sql = "DELETE FROM vets"
     run_sql(sql)
+
+def select(id):
+    vet = None
+    sql = "SELECT * FROM vets WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        vet = Vet(result['first_name'], result['last_name'], result['position'], result ['id'])
+    return vet
