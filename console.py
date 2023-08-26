@@ -24,10 +24,10 @@ pet_repository.save(pet3)
 # pet_repository.delete_all()
 # pet_repository.delete(2)
 
-pet1.name = 'Molly'
-pet_repository.update(pet1)
+# pet1.name = 'Molly'
+# pet_repository.update(pet1)
 
-pets = pet_repository.select_all()
+# pets = pet_repository.select_all()
 
 # pet4 = pet_repository.select(3)
 # pdb.set_trace()
@@ -40,6 +40,9 @@ pets = pet_repository.select_all()
 # vet1 = Vet('Martin', 'Jones', 'Head Veterinarian')
 # vet_repository.update(vet1)
 # vets = vet_repository.select_all()
+
+vet = vet_repository.vet_for_pet(pet2)
+pet = pet_repository.pets_for_vet(vet1)
 
 
 pdb.set_trace()

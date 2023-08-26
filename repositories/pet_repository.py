@@ -48,3 +48,15 @@ def update(pet):
     sql = "UPDATE pets SET (name, dob, species, owner, contact_no, vet_id, treatment_notes) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
     values =[pet.name, pet.dob, pet.species, pet.owner, pet.contact_no, pet.vet.id, pet.treatment_notes, pet.id]
     run_sql(sql, values)
+
+def pets_for_vet(vet):
+    # pdb.set_trace()
+    pets = []
+    sql = "SELECT * FROM pets WHERE vet_id = %s"
+    values =[vet.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        pet = Pet(row['name'], row['dob'], row['species'], row['owner'], row['contact_no'], vet, row['treatment_notes'], row['id'])
+        pets.append(pet)
+    return pets
