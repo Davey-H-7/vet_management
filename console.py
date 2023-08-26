@@ -13,9 +13,13 @@ vet_repository.save(vet1)
 vet2 = Vet('Rose', 'Tyler', 'Junior Veterinarian')
 vet_repository.save(vet2)
 
+# vets = vet_repository.select_all()
+
+# vet3 = vet_repository.select(1)
+
+vet_repository.delete(1)
 vets = vet_repository.select_all()
 
-vet3 = vet_repository.select(1)
 
 
 pdb.set_trace()

@@ -43,3 +43,8 @@ def select(id):
         result = results[0]
         vet = Vet(result['first_name'], result['last_name'], result['position'], result ['id'])
     return vet
+
+def delete(id):
+    sql = "DELETE FROM vets WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
