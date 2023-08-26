@@ -22,7 +22,10 @@ pet3 = Pet('Finn', '04/01/2022', 'Beast', 'Carol Hill', '02346 544 726', vet2, '
 pet_repository.save(pet3)
 
 # pet_repository.delete_all()
-pet_repository.delete(2)
+# pet_repository.delete(2)
+
+pet1.name = 'Molly'
+pet_repository.update(pet1)
 
 pets = pet_repository.select_all()
 

@@ -35,11 +35,16 @@ def select(id):
 
     if results:
         result = results[0]
-        vet = vet = vet_repository.select(result['vet_id'])
+        vet = vet_repository.select(result['vet_id'])
         pet = Pet(result['name'], result['dob'], result['species'], result['owner'], result['contact_no'], vet, result['treatment_notes'], result ['id'])
     return pet
 
 def delete(id):
     sql = "DELETE FROM pets WHERE id = %s"
     values =[id]
+    run_sql(sql, values)
+
+def update(pet):
+    sql = "UPDATE pets SET (name, dob, species, owner, contact_no, vet_id, treatment_notes) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values =[pet.name, pet.dob, pet.species, pet.owner, pet.contact_no, pet.vet.id, pet.treatment_notes, pet.id]
     run_sql(sql, values)
