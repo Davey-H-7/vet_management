@@ -27,3 +27,7 @@ def select_all():
         vet = Vet(row['first_name'], row['last_name'], row['position'], row['id'])
         vets.append(vet)
     return vets
+
+def delete_all():
+    sql = "DELETE FROM vets"
+    run_sql(sql)
