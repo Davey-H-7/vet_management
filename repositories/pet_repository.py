@@ -26,3 +26,20 @@ def select_all():
 def delete_all():
     sql = "DELETE FROM pets"
     run_sql(sql)
+
+def select(id):
+    pet = None
+    sql = "SELECT * FROM pets WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        vet = vet = vet_repository.select(result['vet_id'])
+        pet = Pet(result['name'], result['dob'], result['species'], result['owner'], result['contact_no'], vet, result['treatment_notes'], result ['id'])
+    return pet
+
+def delete(id):
+    sql = "DELETE FROM pets WHERE id = %s"
+    values =[id]
+    run_sql(sql, values)
