@@ -21,6 +21,10 @@ pet_repository.save(pet2)
 pet3 = Pet('Finn', '04/01/2022', 'Beast', 'Carol Hill', '02346 544 726', vet2, 'Surgery undertaken to remove objects from intestines')
 pet_repository.save(pet3)
 
+pets = pet_repository.select_all()
+
+pdb.set_trace()
+
 # vet3 = vet_repository.select(1)
 
 # vet_repository.delete(1)

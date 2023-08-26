@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.vet import Vet
 from models.pet import Pet
+import repositories.vet_repository as vet_repository
 import pdb
 
 def save (pet):
@@ -10,3 +11,14 @@ def save (pet):
     id = results[0]['id']
     pet.id = id
     return pet
+
+def select_all():
+    pets =[]
+    sql = "SELECT * FROM pets"
+    results = run_sql(sql)
+
+    for row in results:
+        vet = vet_repository.select(row['vet_id'])
+        pet = Pet(row['name'], row['dob'], row['species'], row['owner'], row['contact_no'], vet, row['treatment_notes'], row['id'])
+        pets.append(pet)
+    return pets
