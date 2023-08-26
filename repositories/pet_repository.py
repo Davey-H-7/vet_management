@@ -22,3 +22,7 @@ def select_all():
         pet = Pet(row['name'], row['dob'], row['species'], row['owner'], row['contact_no'], vet, row['treatment_notes'], row['id'])
         pets.append(pet)
     return pets
+
+def delete_all():
+    sql = "DELETE FROM pets"
+    run_sql(sql)
