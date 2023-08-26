@@ -2,6 +2,7 @@ import unittest
 
 from models.vet import Vet
 
+
 class TestVet(unittest.TestCase):
 
     def setUp(self):
@@ -12,6 +13,9 @@ class TestVet(unittest.TestCase):
 
     def test_vet_has_position(self):
         self.assertEqual('Veterinarian', self.vet1.position)
+
+    def test_vet_has_id(self):
+        self.assertEqual(1, self.vet1.id)
 
     def test_vet_has_id(self):
         self.assertEqual(1, self.vet1.id)

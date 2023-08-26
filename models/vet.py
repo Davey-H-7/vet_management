@@ -4,4 +4,3 @@ class Vet:
         self.name = name
         self.position = position
         self.id = id
-        self.patients = []
