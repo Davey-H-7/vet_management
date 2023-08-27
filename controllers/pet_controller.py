@@ -35,3 +35,9 @@ def save_pet():
     new_pet = Pet(name, dob, species, owner, contact_no, vet, treatment_notes)
     pet_repository.save(new_pet)
     return redirect ('/pets')
+
+@pet_blueprint.route('/pets/<id>/edit')
+def edit_pet(id):
+    pet = pet_repository.select(id)
+    vets = vet_repository.select_all()
+    return render_template('pets/edit.html', pet = pet, all_vets = vets)
