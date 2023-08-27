@@ -12,4 +12,8 @@
 <br>
 <a href="/vets/{{vet.id}}/edit">Edit Details</a>
 
+<form class ="delete-form" action="/vets/{{vet.id}}/delete" method="POST">
+    <button class="trash-button"> Remove Staff Member</button>
+</form>
+
 {% endblock %}

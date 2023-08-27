@@ -43,3 +43,8 @@ def update_vet(id):
     vet_repository.update(vet_updated)
     return redirect ('/vets')
 
+@vet_blueprint.route('/vets/<id>/delete', methods=['POST'])
+def delete_vet(id):
+    vet_repository.delete(id)
+    return redirect('/vets')
+
