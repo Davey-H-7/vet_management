@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2> {{vet.first_name}} {{vet.last_name}}</h2>
+<h3> {{vet.position}}</h3>
+<h3> Patients: </h3>
+
+<ul>
+    {% for pet in pets %}
+    <li>{{pet.name}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

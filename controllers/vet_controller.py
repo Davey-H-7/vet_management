@@ -9,3 +9,9 @@ vet_blueprint = Blueprint('vet', __name__)
 def index():
     vets = vet_repository.select_all()
     return render_template('vets/index.html', title = 'Veterinarian Staff', all_vets = vets)
+
+@vet_blueprint.route('/vets/<id>')
+def show (id):
+    vet = vet_repository.select(id)
+    pets = pet_repository.pets_for_vet(vet)
+    return render_template('vets/show.html', title = vet.first_name, vet = vet, pets = pets)
