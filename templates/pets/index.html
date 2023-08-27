@@ -1,5 +1,19 @@
 {% extends 'base.html' %} {% block content %}
 
 <h1>Registered Pets</h1>
+<a href="/pets/new"> Register a new pet </a>
+</header>
 
+<table>
+    <ul>
+    {% for pet in all_pets %}
+        <li> 
+          <p><b></b>{{pet.name}}</b></p>
+          <p> {{pet.species}}</p>
+          <a href ='/pets/{{pet.id}}'> View Details </a>
+
+      </li>
+      {% endfor %}
+    </ul>
+</table>
 {% endblock %}
