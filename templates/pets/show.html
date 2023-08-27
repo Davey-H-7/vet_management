@@ -6,14 +6,13 @@
 <p> Owner Name: {{pet.owner}}</p>
 <p> Contact Number: {{pet.contact_no}}</p>
 <p> Treatment Notes: {{pet.treatment_notes}}</p>
-<br>
-<p> Registered with veterinarian:</p><br>
+<p> Registered with:</p>
 <p> {{vet.first_name}} {{vet.last_name}}</p>
 <br>
-<a href="/vets/{{vet.id}}/edit">Edit Details</a>
+<a href="/pets/{{pet.id}}/edit">Edit Details</a>
 
-<form class ="delete-form" action="/vets/{{vet.id}}/delete" method="POST">
-    <button class="trash-button"> Remove Staff Member</button>
+<form class ="delete-form" action="/pets/{{pet.id}}/delete" method="POST">
+    <button class="trash-button"> Unregister</button>
 </form>
 
 {% endblock %}

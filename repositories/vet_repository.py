@@ -55,7 +55,6 @@ def update(vet):
     run_sql(sql, values)
 
 def vet_for_pet(pet):
-    pdb.set_trace()
     sql = "SELECT * FROM vets where id = %s"
     values = [pet.vet.id]
     results =run_sql(sql, values)[0]
