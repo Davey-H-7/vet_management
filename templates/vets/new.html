@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1> Add New Veterinary Staff</h1>
+
+<form action="/vets" method ='POST'>
+    <label for="first_name"> Enter first name: </label>
+    <input type="text" name="first_name" id="first_name">
+    <br>
+
+    <label for="last_name"> Enter last name: </label>
+    <input type="text" name="last_name" id="last_name">
+    <br>
+
+    <label for="position"> Select position: </label>
+    <select name="position" id="position">
+        <option value="Lead Veterinarian">Lead Veterinarian</option>
+        <option value="Veterinary Surgeon">Veterinary Surgeon</option>
+        <option value="Junior Veterinarian">Junior Veterinarian</option>
+        <option value="Exotic Animal Specialist">Exotic Animal Specialist</option>
+    </select>
+    <br>
+
+    <button type="submit">Submit</button>
+
+
+</form>
+{% endblock %}
