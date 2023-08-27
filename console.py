@@ -41,9 +41,9 @@ pet_repository.save(pet3)
 # vet_repository.update(vet1)
 # vets = vet_repository.select_all()
 
-vet = vet_repository.vet_for_pet(pet2)
-pet = pet_repository.pets_for_vet(vet1)
+# vet = vet_repository.vet_for_pet(pet2)
+# pet = pet_repository.pets_for_vet(vet1)
 
 
-pdb.set_trace()
+# pdb.set_trace()
 

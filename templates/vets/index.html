@@ -1,5 +1,21 @@
 {% extends 'base.html' %} {% block content %}
-
+<header>
 <h1>Veterinary Staff</h1>
+</header>
+
+<table>
+    <ul>
+    {% for vet in all_vets %}
+        <li> 
+          <p>{{vet.first_name}} {{vet.last_name}}</p>
+          <p><b> {{vet.position}}</b></p>
+          <a href ='vets/{{vet.id}}'> View Details </a>
+
+      </li>
+      {% endfor %}
+    </ul>
+</table>
+
+
 
 {% endblock %}
