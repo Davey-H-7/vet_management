@@ -34,3 +34,12 @@ def edit_vet(id):
     vet = vet_repository.select(id)
     return render_template('vets/edit.html', vet = vet)
 
+@vet_blueprint.route('/vets/<id>', methods =['POST'])
+def update_vet(id):
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    position = request.form['position']
+    vet_updated = Vet(first_name, last_name, position, id)
+    vet_repository.update(vet_updated)
+    return redirect ('/vets')
+
