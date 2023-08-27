@@ -15,3 +15,8 @@ def show (id):
     pet = pet_repository.select(id)
     vet = vet_repository.vet_for_pet(pet)
     return render_template('pets/show.html', title = pet.name, vet = vet, pet = pet)
+
+@pet_blueprint.route('/pets/new')
+def add_pet():
+    vets = vet_repository.select_all()
+    return render_template('pets/new.html', title = 'Register New Pet', all_vets = vets)
