@@ -28,3 +28,9 @@ def save_vet():
     new_vet = Vet(first_name, last_name, position)
     vet_repository.save(new_vet)
     return redirect ('/vets')
+
+@vet_blueprint.route('/vets/<id>/edit')
+def edit_vet(id):
+    vet = vet_repository.select(id)
+    return render_template('vets/edit.html', vet = vet)
+

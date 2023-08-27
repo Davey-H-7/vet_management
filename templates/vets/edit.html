@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %}
+<h1> Edit Staff Details:</h1>
+
+<form action="/vets/{{vet.id}}" method ='POST'>
+    <label for="first_name"> Enter first name: </label>
+    <input type="text" name="first_name" id="first_name" value="{{vet.first_name}}">
+    <br>
+
+    <label for="last_name"> Enter last name: </label>
+    <input type="text" name="last_name" id="last_name" value="{{vet.last_name}}">
+    <br>
+
+    <label for="position"> Select position: </label>
+    <select name="position" id="position">
+        <option value="Lead Veterinarian" 
+        {% if vet.position == "Lead Veterinarian" %} selected = "selected" {% endif %}>Lead Veterinarian</option>
+        <option value="Veterinary Surgeon"
+        {% if vet.position == "Veterinary Surgeon" %} selected = "selected" {% endif %}>Veterinary Surgeon</option>
+        <option value="Junior Veterinarian"
+        {% if vet.position == "Junior Veterinarian" %} selected = "selected" {% endif %}>Junior Veterinarian</option>
+        <option value="Exotic Animal Specialist"
+        {% if vet.position == 'Exotic Animal Specialist' %} selected = "selected" {% endif %}>Exotic Animal Specialist</option>
+    </select>
+    <br>
+
+    <button type="submit">Submit</button>
+
+
+{% endblock %}
