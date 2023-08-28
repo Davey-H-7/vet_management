@@ -4,16 +4,15 @@
 <a href="/pets/new"> Register a new pet </a>
 </header>
 
-<table>
-    <ul>
+    <ul class ='pet_list'>
     {% for pet in all_pets %}
         <li> 
-          <p><b></b>{{pet.name}}</b></p>
-          <p> {{pet.species}}</p>
+          <p><b></b>Name: {{pet.name}}</b></p>
+          <p>Species: {{pet.species}}</p>
           <a href ='/pets/{{pet.id}}'> View Details </a>
 
       </li>
       {% endfor %}
     </ul>
-</table>
+
 {% endblock %}

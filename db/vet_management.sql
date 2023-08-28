@@ -12,7 +12,7 @@ CREATE TABLE vets(
 CREATE TABLE pets(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    dob VARCHAR(255),
+    dob DATE,
     species VARCHAR(255),
     owner VARCHAR(255),
     contact_no VARCHAR(255),

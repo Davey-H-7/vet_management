@@ -7,10 +7,16 @@
     <input type="text" name="name" id="name" value="{{pet.name}}">
     <br>
     <label for="dob"> Enter dob: </label>
-    <input type="text" name="dob" id="dob" value="{{pet.dob}}">
+    <input type="date" name="dob" id="dob" value="{{pet.dob}}">
     <br>
-    <label for="species"> Enter species: </label>
-    <input type="text" name="species" id="species" value="{{pet.species}}">
+    <label for="species"> Select species: </label>
+    <select name="species" id="species">
+        <option value="Dog" {% if pet.species == "Dog" %} selected = "selected" {% endif %}>Dog</option>
+        <option value="Cat" {% if pet.species == "Cat" %} selected = "selected" {% endif %}>Cat</option>
+        <option value="Snake" {% if pet.species == "Snake" %} selected = "selected" {% endif %}>Snake</option>
+        <option value="Parrot"{% if pet.species == "Parrot" %} selected = "selected" {% endif %}>Parrot</option>
+        <option value="Hamster"{% if pet.species == "Hamster" %} selected = "selected" {% endif %}>Hamster</option>
+    </select>
     <br>
     <label for="owner"> Enter owner name: </label>
     <input type="text" name="owner" id="owner" value="{{pet.owner}}">

@@ -54,4 +54,9 @@ def update_pet(id):
     vet = vet_repository.select(vet_id)
     pet = Pet(name, dob, species, owner, contact_no, vet, treatment_notes, id)
     pet_repository.update(pet)
-    return redirect ('/pets')
+    return redirect (f'/pets/{pet.id}')
+
+@pet_blueprint.route('/pets/<id>/delete', methods =['POST'])
+def delete_pet(id):
+    pet_repository.delete(id)
+    return redirect('/pets')
