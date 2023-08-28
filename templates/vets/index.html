@@ -1,15 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 
 <h1>Veterinary Staff</h1>
-<a href="vets/new"> Add new staff member </a>
+<a id="new" href="vets/new"> Add new staff member </a>
 
 
 <table>
     <ul>
     {% for vet in all_vets %}
         <li> 
-          <p>{{vet.first_name}} {{vet.last_name}}</p>
-          <p><b> {{vet.position}}</b></p>
+          <p><b>{{vet.first_name}} {{vet.last_name}}</b></p>
+          <p>Position: {{vet.position}}</p>
           <a href ='vets/{{vet.id}}'> View Details </a>
 
       </li>

@@ -1,7 +1,20 @@
 header {
     background-color:mediumseagreen;
     margin:0;
-    padding:5px
+    padding:5px;
+    overflow:hidden;
+}
+
+header ul{
+    float:left;
+}
+
+header a{
+    color:black
+}
+
+header h1{
+    float:right;
 }
 
 body { 
@@ -14,6 +27,16 @@ body {
     background-color: white;
     margin: 0 15% 0 15%;
     border-radius: 10px;
+    position:relative;
+}
+
+.container #new{
+    display:inline-block;
+    margin-left: 50%;
+}
+
+.container h1{
+    display: inline-block;
 }
 
 ul {
@@ -35,4 +58,42 @@ img {
 .container li{
     margin: 0;
     border-style: groove none none none;
+}
+
+label{
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+}
+
+input {
+  float: left;
+  margin-bottom: 10px;
+}
+
+select {
+    float: left;
+    margin-bottom: 10px;
+}
+
+textarea {
+    float: left;
+    margin-bottom: 10px;
+  }
+
+.container form{
+    overflow:hidden;
+}
+
+button{
+    margin: 10px;
+    padding: 5px;
+    position:absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+#pet_list li{
+    border-style: none;
 }

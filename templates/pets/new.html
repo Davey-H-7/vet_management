@@ -24,15 +24,15 @@
     <label for="contact_no"> Enter contact telephone number: </label>
     <input type="text" name="contact_no" id="contact_no">
     <br>
-    <label for="treatment_notes"> Enter Treatment Notes: </label>
-    <textarea name="treatment_notes" id="treatment_notes" rows="5" cols="30"></textarea>
-    <br>
     <label for="vet"> Assign to vet: </label>
     <select id="vet" name="vet_id">
         {% for vet in all_vets %}
         <option value="{{vet.id}}">{{vet.first_name}} {{vet.last_name}}</option>
         {% endfor %}
     </select>
+    <br>
+    <label for="treatment_notes"> Enter Treatment Notes: </label>
+    <textarea name="treatment_notes" id="treatment_notes" rows="5" cols="30"></textarea>
     <br>
     <button type="submit">Submit</button>
 </form>
