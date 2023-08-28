@@ -27,6 +27,7 @@ def select_all():
     for row in results:
         vet = Vet(row['first_name'], row['last_name'], row['position'], row['id'])
         vets.append(vet)
+    vets.sort(key=lambda x: x.last_name)
     return vets
 
 def delete_all():

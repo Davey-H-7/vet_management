@@ -2,7 +2,6 @@ from db.run_sql import run_sql
 from models.vet import Vet
 from models.pet import Pet
 import repositories.vet_repository as vet_repository
-import pdb
 
 def save (pet):
     sql = "INSERT INTO pets (name, dob, species, owner, contact_no, vet_id, treatment_notes) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING *"
@@ -21,6 +20,7 @@ def select_all():
         vet = vet_repository.select(row['vet_id'])
         pet = Pet(row['name'], row['dob'], row['species'], row['owner'], row['contact_no'], vet, row['treatment_notes'], row['id'])
         pets.append(pet)
+    pets.sort(key=lambda x: x.name)
     return pets
 
 def delete_all():
