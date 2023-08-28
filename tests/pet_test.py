@@ -7,7 +7,7 @@ class TestPet(unittest.TestCase):
     
     def setUp (self):
         self.vet1 = Vet('Sophie', 'Hill', 'Veterinarian', id = 1)
-        self.pet1 = Pet('Winnie', '5/7/2017', 'Dog', 'Malcolm Hunter', '01234 567 890', self.vet1, 'Broken tail', id = 2)
+        self.pet1 = Pet('Winnie', '5/7/2017', 'Dog', 'Malcolm Hunter', '01234 567 890', self.vet1, 'Broken tail', id = 2, image = '/images/vera.jpg')
 
     def test_pet_has_name (self):
         self.assertEqual('Winnie', self.pet1.name)
@@ -32,4 +32,9 @@ class TestPet(unittest.TestCase):
 
     def test_pet_has_id (self):
         self.assertEqual(2, self.pet1.id)
+
+    def test_pet_has_image(self):
+        print(self.pet1.image)
+
+
         

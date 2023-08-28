@@ -1,6 +1,6 @@
 from flask import Flask, render_template
-from controllers.vet_controller import vet_blueprint
-from controllers.pet_controller import pet_blueprint
+from controllers.vets_controller import vet_blueprint
+from controllers.pets_controller import pet_blueprint
 
 app = Flask(__name__)
 app.register_blueprint(vet_blueprint)

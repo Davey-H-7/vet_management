@@ -7,5 +7,6 @@ class Pet:
         self.owner = owner
         self.contact_no = contact_no
         self.vet = vet
-        self.treatment_notes = treatment_notes
+        self.treatment_notes = treatment_notes   
         self.id = id
+        
