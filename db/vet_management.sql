@@ -17,7 +17,7 @@ CREATE TABLE pets(
     owner VARCHAR(255),
     contact_no VARCHAR(255),
     treatment_notes TEXT,
-    vet_id INT NOT NULL REFERENCES vets(id)
+    vet_id INT REFERENCES vets(id) ON DELETE SET NULL
 );
 
 

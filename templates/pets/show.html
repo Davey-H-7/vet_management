@@ -7,7 +7,11 @@
 <!-- <img src="../../images/vera.jpg" alt="Pet Image"> -->
 <p> <b>Contact Number:</b> {{pet.contact_no}}</p>
 <p> <b>Treatment Notes:</b> {{pet.treatment_notes}}</p>
+{% if pet.vet == None %}
+<p><b> No Vet assigned</b></p>
+{% else %}
 <p> <b>Registered with:</b> {{vet.first_name}} {{vet.last_name}}</p>
+{% endif %}
 <br>
 <a href="/pets/{{pet.id}}/edit">Edit Details</a>
 
