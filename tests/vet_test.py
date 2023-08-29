@@ -19,6 +19,3 @@ class TestVet(unittest.TestCase):
 
     def test_vet_has_id(self):
         self.assertEqual(1, self.vet1.id)
-
-    def test_vet_has_id(self):
-        self.assertEqual(1, self.vet1.id)
