@@ -10,6 +10,7 @@ import repositories.owner_repository as owner_repository
 
 pet_repository.delete_all()
 vet_repository.delete_all()
+owner_repository.delete_all()
 
 vet1 = Vet('Martha', 'Jones', 'Head Veterinarian')
 vet_repository.save(vet1)
@@ -34,8 +35,12 @@ owner_repository.save(owner2)
 owner3 = Owner('Donatello', ' Turtle', '01564 768 900')
 owner_repository.save(owner3)
 
-owner_repository.delete_all()
+owner_repository.delete(2)
+
 owners = owner_repository.select_all()
+
+
+
 pdb.set_trace()
 
 # pet_repository.delete_all()

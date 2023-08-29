@@ -25,22 +25,21 @@ def delete_all():
     sql = "DELETE FROM owners"
     run_sql(sql)
 
-# def select(id):
-#     vet = None
-#     sql = "SELECT * FROM vets WHERE id = %s"
-#     values = [id]
-#     results = run_sql(sql, values)
+def select(id):
+    owner = None
+    sql = "SELECT * FROM owners WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
 
-#     if results:
-#         result = results[0]
-#         vet = Vet(result['first_name'], result['last_name'], result['position'], result ['id'])
-#     return vet
+    if results:
+        result = results[0]
+        owner = Owner(result['first_name'], result['last_name'], result['contact_no'], result ['id'])
+    return owner
 
-# def delete(id):
-#     # pdb.set_trace()
-#     sql = "DELETE FROM vets WHERE id = %s"
-#     values = [id]
-#     run_sql(sql, values)
+def delete(id):
+    sql = "DELETE FROM owners WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 # def update(vet):
 #     sql = "UPDATE vets SET (first_name, last_name, position) = (%s, %s, %s) WHERE id = %s"
