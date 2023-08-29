@@ -48,10 +48,10 @@ def delete(id):
     values =[id]
     run_sql(sql, values)
 
-# def update(pet):
-#     sql = "UPDATE pets SET (name, dob, species, owner, contact_no, vet_id, treatment_notes) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-#     values =[pet.name, pet.dob, pet.species, pet.owner, pet.contact_no, pet.vet.id, pet.treatment_notes, pet.id]
-#     run_sql(sql, values)
+def update(pet):
+    sql = "UPDATE pets SET (name, dob, species, owner_id, vet_id, treatment_notes) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values =[pet.name, pet.dob, pet.species, pet.owner.id, pet.vet.id, pet.treatment_notes, pet.id]
+    run_sql(sql, values)
 
 # def pets_for_vet(vet):
 #     # pdb.set_trace()
