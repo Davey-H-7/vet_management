@@ -42,7 +42,7 @@ pet_repository.update(pet4)
 
 # owners = owner_repository.select_all()
 
-pets =pet_repository.pets_for_vet(vet3)
+pets =pet_repository.pets_for_owner(owner1)
 
 
 

@@ -66,15 +66,15 @@ def pets_for_vet(vet):
         pets.append(pet)
     return pets
 
-# def pets_for_owner(owner):
-#     # pdb.set_trace()
-#     pets = []
-#     sql = "SELECT * FROM pets WHERE owner_id = %s"
-#     values =[owner.id]
-#     results = run_sql(sql, values)
+def pets_for_owner(owner):
+    # pdb.set_trace()
+    pets = []
+    sql = "SELECT * FROM pets WHERE owner_id = %s"
+    values =[owner.id]
+    results = run_sql(sql, values)
 
-#     for row in results:
-#         vet = vet_repository.select(pet.vet.id)
-#         pet = Pet(row['name'], row['dob'], row['species'], row['owner'], row['contact_no'], vet, row['treatment_notes'], row['id'])
-#         pets.append(pet)
-#     return pets
+    for row in results:
+        vet = vet_repository.select(row['vet_id'])
+        pet = Pet(row['name'], row['dob'], row['species'], owner, vet, row['treatment_notes'], row['id'])
+        pets.append(pet)
+    return pets
