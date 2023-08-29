@@ -29,3 +29,17 @@ def save_owner():
     new_owner = Owner(first_name, last_name, contact_no)
     owner_repository.save(new_owner)
     return redirect ('/owners')
+
+@owner_blueprint.route('/owners/<id>/edit')
+def edit_owner(id):
+    owner = owner_repository.select(id)
+    return render_template('owners/edit.html', owner = owner)
+
+@owner_blueprint.route('/owners/<id>', methods =['POST'])
+def update_owner(id):
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    contact_no = request.form['contact_no']
+    owner_updated = Owner(first_name, last_name, contact_no, id)
+    owner_repository.update(owner_updated)
+    return redirect (f'/owners/{owner_updated.id}')
