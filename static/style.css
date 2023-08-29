@@ -16,6 +16,7 @@ header a{
 header h1{
     float:right;
     font-family: 'ADLaM Display', cursive;
+    font-size: 3vw;
 }
 
 body { 
@@ -48,10 +49,13 @@ ul {
 }
 
 img {
-    width: 20%;
+    width: 200px;
+    height: 200px;
     display: inline-block;
-
-
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: 50% 10%;
+    margin: 0 3% 0 3%;
 }
 
 .images{
@@ -66,23 +70,26 @@ img {
 label{
     float: left;
     clear: left;
-    width: 250px;
+    width: 40%;
     text-align: right;
 }
 
 input {
   float: left;
   margin-bottom: 10px;
+  width: 20%;
 }
 
 select {
     float: left;
     margin-bottom: 10px;
+    width: 20%
 }
 
 textarea {
     float: left;
     margin-bottom: 10px;
+    width:30%;
   }
 
 .container form{
