@@ -35,7 +35,8 @@ owner_repository.save(owner2)
 owner3 = Owner('Donatello', ' Turtle', '01564 768 900')
 owner_repository.save(owner3)
 
-owner_repository.delete(2)
+owner2.first_name ='Lauren'
+owner_repository.update(owner2)
 
 owners = owner_repository.select_all()
 

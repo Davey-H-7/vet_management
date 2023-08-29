@@ -41,10 +41,10 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
-# def update(vet):
-#     sql = "UPDATE vets SET (first_name, last_name, position) = (%s, %s, %s) WHERE id = %s"
-#     values =[vet.first_name, vet.last_name, vet.position, vet.id]
-#     run_sql(sql, values)
+def update(owner):
+    sql = "UPDATE owners SET (first_name, last_name, contact_no) = (%s, %s, %s) WHERE id = %s"
+    values =[owner.first_name, owner.last_name, owner.contact_no, owner.id]
+    run_sql(sql, values)
 
 # def vet_for_pet(pet):
 #     if pet.vet:
