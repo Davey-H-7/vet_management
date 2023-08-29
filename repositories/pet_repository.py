@@ -53,17 +53,18 @@ def update(pet):
     values =[pet.name, pet.dob, pet.species, pet.owner.id, pet.vet.id, pet.treatment_notes, pet.id]
     run_sql(sql, values)
 
-# def pets_for_vet(vet):
-#     # pdb.set_trace()
-#     pets = []
-#     sql = "SELECT * FROM pets WHERE vet_id = %s"
-#     values =[vet.id]
-#     results = run_sql(sql, values)
+def pets_for_vet(vet):
+    # pdb.set_trace()
+    pets = []
+    sql = "SELECT * FROM pets WHERE vet_id = %s"
+    values =[vet.id]
+    results = run_sql(sql, values)
 
-#     for row in results:
-#         pet = Pet(row['name'], row['dob'], row['species'], row['owner'], row['contact_no'], vet, row['treatment_notes'], row['id'])
-#         pets.append(pet)
-#     return pets
+    for row in results:
+        owner = owner_repository.select(row['owner_id'])
+        pet = Pet(row['name'], row['dob'], row['species'], owner, vet, row['treatment_notes'], row['id'])
+        pets.append(pet)
+    return pets
 
 # def pets_for_owner(owner):
 #     # pdb.set_trace()
