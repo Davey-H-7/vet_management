@@ -46,12 +46,9 @@ def update(owner):
     values =[owner.first_name, owner.last_name, owner.contact_no, owner.id]
     run_sql(sql, values)
 
-# def vet_for_pet(pet):
-#     if pet.vet:
+# def owner_for_pet(pet):
 #         sql = "SELECT * FROM vets where id = %s"
-#         values = [pet.vet.id]
+#         values = [pet.owner.id]
 #         results =run_sql(sql, values)[0]
-#         vet = Vet(results['first_name'], results['last_name'], results['position'], results['id'])
-#     else:
-#         vet = None
-#     return vet
+#         owner = Owner(results['first_name'], results['last_name'], results['contact_no'], results['id'])
+#         return owner
