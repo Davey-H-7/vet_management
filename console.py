@@ -2,11 +2,13 @@ import pdb
 
 from models.pet import Pet
 from models.vet import Vet
+from models.owner import Owner
 
 import repositories.pet_repository as pet_repository
 import repositories.vet_repository as vet_repository
+import repositories.owner_repository as owner_repository
 
-
+pet_repository.delete_all()
 vet_repository.delete_all()
 
 vet1 = Vet('Martha', 'Jones', 'Head Veterinarian')
@@ -24,6 +26,13 @@ pet3 = Pet('Finn', '2022-08-19', 'Snake', 'Carol Hill', '02346 544 726', vet3, '
 pet_repository.save(pet3)
 pet4 = Pet('Percy', '2022-08-19', 'Parrot', 'James Brown', '02346 699 726', vet3, 'Cracker addiction')
 pet_repository.save(pet4)
+
+owner1 = Owner('Carol', 'Hill', '09876 455 322')
+owner_repository.save(owner1)
+owner2 = Owner('Malcolm', 'Hunter', '07823 567 211')
+owner_repository.save(owner2)
+owner3 = Owner('Donatello', ' Turtle', '01564 768 900')
+owner_repository.save(owner3)
 
 # pet_repository.delete_all()
 # pet_repository.delete(2)
