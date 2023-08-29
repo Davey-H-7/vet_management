@@ -21,9 +21,9 @@ def select_all():
     owners.sort(key=lambda x: x.last_name)
     return owners
 
-# def delete_all():
-#     sql = "DELETE FROM vets"
-#     run_sql(sql)
+def delete_all():
+    sql = "DELETE FROM owners"
+    run_sql(sql)
 
 # def select(id):
 #     vet = None

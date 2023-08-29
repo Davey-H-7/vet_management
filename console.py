@@ -34,8 +34,10 @@ owner_repository.save(owner2)
 owner3 = Owner('Donatello', ' Turtle', '01564 768 900')
 owner_repository.save(owner3)
 
+owner_repository.delete_all()
 owners = owner_repository.select_all()
 pdb.set_trace()
+
 # pet_repository.delete_all()
 # pet_repository.delete(2)
 
