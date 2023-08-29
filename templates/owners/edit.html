@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<h1> Edit Staff Details:</h1>
+<h1> <u>Edit Staff Details:</u></h1>
 
 <form action="/owners/{{owner.id}}" method ='POST'>
     <label for="first_name"> Enter first name: </label>
@@ -13,6 +13,14 @@
     <label for="contact_no"> Enter last name: </label>
     <input type="text" name="contact_no" id="contact_no" value="{{owner.contact_no}}">
     <br>
+    <label for="registered"> Registered status: </label>
+    <select name="registered" id="registered">
+        <option value= '1' 
+        {% if owner.registered == '1' %} selected = "selected" {% endif %}>Currently registered</option>
+        <option value='0'
+        {% if owner.registered == '0' %} selected = "selected" {% endif %}>No longer registered</option>
+    </select>
+
     <button type="submit">Submit</button>
 
 

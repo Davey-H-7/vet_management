@@ -1,17 +1,30 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2> <u>{{pet.name}}</u></h2>
+<h1> <u>{{pet.name}}</u></h1>
+
 <h3> <b>Species:</b> {{pet.species}}</h3>
+
 <h3> <b>Date of birth:</b> {{pet.dob}}</h3>
-<p> <b>Owner Name:</b> {{owner.first_name}} {{owner.last_name}}</p>
-<p> <b>Treatment Notes:</b> {{pet.treatment_notes}}</p>
-{% if pet.vet == None %}
-<p><b> No Vet assigned</b></p>
-{% else %}
-<p> <b>Registered with:</b> {{vet.first_name}} {{vet.last_name}}</p>
+<div id="owner">
+    <p> <b>Owner Name:</b> <a href='../owners/{{pet.owner.id}}'>{{owner.first_name}} {{owner.last_name}}</a></p>
+
+    {% if owner.registered == '1' %}
+    <p>Owner currently registered <span id = 'tick'>&#9989;</span></p>
+    {% else %}
+    <p>Owner not currently registered <span id = 'cross'>&#10060;</span> </p>
+    {% endif %}
+</div>
+<div id="vet">
+    {% if pet.vet == None %}
+    <p><b> No Vet assigned</b></p>
+    {% else %}
+    <p> <b>Registered with:</b> <a href ='../vets/{{pet.vet.id}}'>{{vet.first_name}} {{vet.last_name}}</a></p>
 {% endif %}
-<br>
-<a href="/pets/{{pet.id}}/edit">Edit Details</a>
+
+<p> <b>Treatment Notes:</b> {{pet.treatment_notes}}</p>
+</div>
+
+<a id="edit" href="/pets/{{pet.id}}/edit">Edit Details</a>
 
 <form class ="delete-form" action="/pets/{{pet.id}}/delete" method="POST">
     <button class="trash-button"> Unregister</button>

@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1> Edit patient details</h1>
+<h1> <u>Edit patient details</u></h1>
 
 <form action="/pets/{{pet.id}}" method ='POST'>
     <label for="name"> Enter patient name: </label>
@@ -18,11 +18,19 @@
         <option value="Hamster"{% if pet.species == "Hamster" %} selected = "selected" {% endif %}>Hamster</option>
     </select>
     <br>
+    
     <label for="owner"> Enter owner name: </label>
     <select id="owner" name="owner_id">
         {% for owner in all_owners %}
-        <option value="{{owner.id}}"
-            {% if owner.id == pet.owner.id %} selected ="selected"{% endif %}>{{owner.first_name}} {{owner.last_name}}</option>
+            {% if (owner.registered == '1') and (owner.id == pet.owner.id) %}
+            <option value="{{owner.id}}" selected ="selected">{{owner.first_name}} {{owner.last_name}}</option>
+            {% elif owner.registered == '1' %}
+            <option value="{{owner.id}}">{{owner.first_name}} {{owner.last_name}}</option>
+            {% elif (owner.registered == '0') and (owner.id == pet.owner.id) %}
+            <option value="{{owner.id}}" selected ="selected">{{owner.first_name}} {{owner.last_name}} (unregistered)</option>
+            {% else %}
+            <option value="{{owner.id}}"> {{owner.first_name}} {{owner.last_name}} (unregistered)</option>
+        {% endif %}
         {% endfor %}
     </select>
    

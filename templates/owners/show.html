@@ -1,8 +1,16 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2> <u>{{owner.first_name}} {{owner.last_name}}</u></h2>
+<h1> <u>{{owner.first_name}} {{owner.last_name}}</u></h1>
+
 <h3> <b>Contact Telephone:</b> {{owner.contact_no}}</h3>
-<h3> <b>Owner of:</b></h3>
+
+{% if owner.registered == '1' %}
+<p>Currently registered with surgery <span id = 'tick'>&#9989;</span></p>
+{% else %}
+<p>Not currently registered <span id = 'cross'>&#10060;</span> </p>
+{% endif %}
+
+<p> <b>Owner of:</b></p>
 
 <ul id ='pet_list'>
      {% for pet in pets %}
@@ -10,8 +18,10 @@
     {% endfor %}
 </ul>
 <br>
-<a href="/owners/{{owner.id}}/edit">Edit Details</a>
+
+<a id ='edit' href="/owners/{{owner.id}}/edit">Edit Details</a>
 <br>
+
 <form class ="delete-form" action="/owners/{{owner.id}}/delete" method="POST">
     <button class="trash-button"> Remove from records</button>
 </form>

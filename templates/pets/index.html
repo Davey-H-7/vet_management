@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Registered Pets</h1>
+<h1><u>Registered Pets</u></h1>
 <a id ='new' href="/pets/new"> Register a new pet </a>
 </header>
 
@@ -9,6 +9,7 @@
         <li> 
           <p><b>{{pet.name}}</b></p>
           <p>Species: {{pet.species}}</p>
+          <p>Date of Birth: {{pet.dob}}</p>
           <a href ='/pets/{{pet.id}}'> View All Information </a>
 
       </li>

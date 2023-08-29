@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Pet owners on record</h1>
+<h1><u>Pet owners on record</u></h1>
 <a id="new" href="owners/new"> Register a new pet owner </a>
 
 
@@ -10,8 +10,12 @@
         <li> 
           <p><b>{{owner.first_name}} {{owner.last_name}}</b></p>
           <p>Contact telephone: {{owner.contact_no}}</p>
+          {% if owner.registered == '1' %}
+            <p>Currently registered with surgery <span id = 'tick'>&#9989;</span></p>
+          {% else %}
+            <p>Not currently registered <span id = 'cross'>&#10060;</span> </p>
+          {% endif %}
           <a href ='owners/{{owner.id}}'> View Details </a>
-
       </li>
       {% endfor %}
     </ul>

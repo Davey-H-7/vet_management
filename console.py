@@ -32,8 +32,12 @@ pet2 = Pet('Skye', '2017-01-25', 'Dog', owner1, vet2, 'No major issues')
 pet_repository.save(pet2)
 pet3 = Pet('Finn', '2022-08-19', 'Snake', owner1, vet3, 'Hip transplant')
 pet_repository.save(pet3)
-pet4 = Pet('Percy', '2022-08-19', 'Parrot', owner3, vet3, 'Cracker addiction')
+pet4 = Pet('Percy', '2018-03-12', 'Parrot', owner3, vet3, 'Cracker addiction')
 pet_repository.save(pet4)
+pet5 = Pet('Hamburg', '2020-02-24', 'Hamster', owner3, vet1, 'Antibiotics prescriped')
+pet_repository.save(pet5)
+pet6 = Pet('Vera', '2023-06-07', 'Dog', owner2, vet1, 'Growing well')
+pet_repository.save(pet6)
 
 # pet4.name = 'Polly'
 # pet_repository.update(pet4)

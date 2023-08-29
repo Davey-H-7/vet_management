@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1> Register a new patient</h1>
+<h1> <u>Register a new patient</u></h1>
 
 <form action="/pets" method ='POST'>
     <label for="name"> Enter patient name: </label>
@@ -24,7 +24,9 @@
     <label for="owner"> Select owner: </label>
     <select id="owner" name="owner_id">
         {% for owner in all_owners %}
+        {% if owner.registered == '1' %}
         <option value="{{owner.id}}">{{owner.first_name}} {{owner.last_name}}</option>
+        {% endif %}
         {% endfor %}
     </select>
     <br>
@@ -40,7 +42,7 @@
     <label for="treatment_notes"> Enter Treatment Notes: </label>
     <textarea name="treatment_notes" id="treatment_notes" rows="5" cols="30"></textarea>
     <br>
-    
+
     <button type="submit">Submit</button>
 </form>
 {% endblock %}

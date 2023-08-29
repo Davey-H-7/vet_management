@@ -1,7 +1,7 @@
 from flask import Flask, render_template, Blueprint, redirect, request
 import repositories.owner_repository as owner_repository
 import repositories.pet_repository as pet_repository
-
+import pdb
 from models.owner import Owner
 
 owner_blueprint = Blueprint('owner', __name__)
@@ -40,6 +40,12 @@ def update_owner(id):
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     contact_no = request.form['contact_no']
-    owner_updated = Owner(first_name, last_name, contact_no, id)
+    registered = request.form['registered']
+    owner_updated = Owner(first_name, last_name, contact_no, id, registered)
     owner_repository.update(owner_updated)
     return redirect (f'/owners/{owner_updated.id}')
+
+@owner_blueprint.route('/owners/<id>/delete', methods=['POST'])
+def owner_vet(id):
+    owner_repository.delete(id)
+    return redirect('/owners')

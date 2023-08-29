@@ -4,7 +4,7 @@ from models.owner import Owner
 
 class TestOwner(unittest.TestCase):
     def setUp(self):
-        self.owner = Owner('Carol', 'Hill', '05678 345 222', id = 4)
+        self.owner = Owner('Carol', 'Hill', '05678 345 222', 4, 0)
 
     def test_owner_has_first_name(self):
         self.assertEqual('Carol', self.owner.first_name)
@@ -17,3 +17,6 @@ class TestOwner(unittest.TestCase):
 
     def test_owner_has_id(self):
         self.assertEqual(4, self.owner.id)
+
+    def test_owner_has_registered_status(self):
+        self.assertEqual(0, self.owner.registered)
