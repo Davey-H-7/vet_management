@@ -42,7 +42,7 @@ pet_repository.save(pet4)
 
 # owners = owner_repository.select_all()
 
-pets = pet_repository.select_all()
+pet = pet_repository.select(3)
 
 
 
