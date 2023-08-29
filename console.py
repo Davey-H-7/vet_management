@@ -45,7 +45,7 @@ pet_repository.save(pet4)
 pets = pet_repository.select_all()
 
 
-pdb.set_trace()
+
 
 # pet_repository.delete_all()
 # pet_repository.delete(2)
@@ -53,7 +53,8 @@ pdb.set_trace()
 # pet1.name = 'Molly'
 # pet_repository.update(pet1)
 
-# pet4 = pet_repository.select(3)
+# pet = pet_repository.select(3)
+pdb.set_trace()
 # pdb.set_trace()
 
 # vet3 = vet_repository.select(1)
