@@ -3,9 +3,7 @@
 <h2> <u>{{pet.name}}</u></h2>
 <h3> <b>Species:</b> {{pet.species}}</h3>
 <h3> <b>Date of birth:</b> {{pet.dob}}</h3>
-<p> <b>Owner Name:</b> {{pet.owner}}</p>
-<!-- <img src="../../images/vera.jpg" alt="Pet Image"> -->
-<p> <b>Contact Number:</b> {{pet.contact_no}}</p>
+<p> <b>Owner Name:</b> {{owner.first_name}} {{owner.last_name}}</p>
 <p> <b>Treatment Notes:</b> {{pet.treatment_notes}}</p>
 {% if pet.vet == None %}
 <p><b> No Vet assigned</b></p>

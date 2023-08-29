@@ -4,6 +4,7 @@ from models.pet import Pet
 from models.owner import Owner
 import repositories.vet_repository as vet_repository
 import repositories.owner_repository as owner_repository
+import pdb
 
 def save (pet):
     sql = "INSERT INTO pets (name, dob, species, owner_id, vet_id, treatment_notes) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
@@ -37,6 +38,7 @@ def select(id):
     results = run_sql(sql, values)
 
     if results:
+        # pdb.set_trace()
         result = results[0]
         vet = vet_repository.select(result['vet_id'])
         owner = owner_repository.select(result['owner_id'])

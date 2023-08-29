@@ -6,9 +6,11 @@
     <label for="name"> Enter patient name: </label>
     <input type="text" name="name" id="name">
     <br>
+
     <label for="dob"> Enter dob: </label>
     <input type="date" name="dob" id="dob">
     <br>
+
     <label for="species"> Select species: </label>
     <select name="species" id="species">
         <option value="Dog">Dog</option>
@@ -18,12 +20,15 @@
         <option value="Hamster">Hamster</option>
     </select>
     <br>
-    <label for="owner"> Enter owner name: </label>
-    <input type="text" name="owner" id="owner">
+
+    <label for="owner"> Select owner: </label>
+    <select id="owner" name="owner_id">
+        {% for owner in all_owners %}
+        <option value="{{owner.id}}">{{owner.first_name}} {{owner.last_name}}</option>
+        {% endfor %}
+    </select>
     <br>
-    <label for="contact_no"> Enter contact telephone number: </label>
-    <input type="text" name="contact_no" id="contact_no">
-    <br>
+
     <label for="vet"> Assign to vet: </label>
     <select id="vet" name="vet_id">
         {% for vet in all_vets %}
@@ -31,9 +36,11 @@
         {% endfor %}
     </select>
     <br>
+
     <label for="treatment_notes"> Enter Treatment Notes: </label>
     <textarea name="treatment_notes" id="treatment_notes" rows="5" cols="30"></textarea>
     <br>
+    
     <button type="submit">Submit</button>
 </form>
 {% endblock %}

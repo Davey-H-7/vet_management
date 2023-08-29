@@ -35,14 +35,14 @@ pet_repository.save(pet3)
 pet4 = Pet('Percy', '2022-08-19', 'Parrot', owner3, vet3, 'Cracker addiction')
 pet_repository.save(pet4)
 
-pet4.name = 'Polly'
-pet_repository.update(pet4)
+# pet4.name = 'Polly'
+# pet_repository.update(pet4)
 # owner2.first_name ='Lauren'
 # owner_repository.update(owner2)
 
-# owners = owner_repository.select_all()
-
-pets =pet_repository.pets_for_owner(owner1)
+owner = owner_repository.select(3)
+# pets =pet_repository.pets_for_owner(owner1)
+# owner = owner_repository.owner_for_pet(pet2)
 
 
 
@@ -54,7 +54,7 @@ pets =pet_repository.pets_for_owner(owner1)
 # pet_repository.update(pet1)
 
 # pet = pet_repository.select(3)
-pdb.set_trace()
+# pdb.set_trace()
 # pdb.set_trace()
 
 # vet3 = vet_repository.select(1)
