@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2> <u>{{owner.first_name}} {{owner.last_name}}</u></h2>
+<h3> <b>Contact Telephone:</b> {{owner.contact_no}}</h3>
+<h3> <b>Patients:</b></h3>
+
+<ul id ='pet_list'>
+     {% for pet in pets %}
+        <a href ='../pets/{{pet.id}}'><li>{{pet.name}} the {{pet.species}}</li></a>
+    {% endfor %}
+</ul>
+<br>
+<a href="/owners/{{owner.id}}/edit">Edit Details</a>
+<br>
+<form class ="delete-form" action="/owners/{{owner.id}}/delete" method="POST">
+    <button class="trash-button"> Remove from records</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1> Register new pet owner </h1>
+
+<form action="/owners" method ='POST'>
+    <label for="first_name"> Enter first name: </label>
+    <input type="text" name="first_name" id="first_name">
+    <br>
+
+    <label for="last_name"> Enter last name: </label>
+    <input type="text" name="last_name" id="last_name">
+    <br>
+
+    <label for="contact_no"> Enter contact telephone: </label>
+    <input type="text" name="contact_no" id="contact_no">
+    <br>
+
+    <button type="submit">Submit</button>
+
+
+</form>
+{% endblock %}

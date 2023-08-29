@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Pet owners on record</h1>
+<a id="new" href="owners/new"> Register a new pet owner </a>
+
+
+<table>
+    <ul>
+    {% for owner in all_owners %}
+        <li> 
+          <p><b>{{owner.first_name}} {{owner.last_name}}</b></p>
+          <p>Contact telephone: {{owner.contact_no}}</p>
+          <a href ='owners/{{owner.id}}'> View Details </a>
+
+      </li>
+      {% endfor %}
+    </ul>
+</table>
+
+
+
+{% endblock %}

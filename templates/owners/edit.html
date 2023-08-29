@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+<h1> Edit Staff Details:</h1>
+
+<form action="/owners/{{owner.id}}" method ='POST'>
+    <label for="first_name"> Enter first name: </label>
+    <input type="text" name="first_name" id="first_name" value="{{owner.first_name}}">
+    <br>
+
+    <label for="last_name"> Enter last name: </label>
+    <input type="text" name="last_name" id="last_name" value="{{owner.last_name}}">
+    <br>
+
+    <label for="contact_no"> Enter last name: </label>
+    <input type="text" name="contact_no" id="contact_no" value="{{owner.contact_no}}">
+    <br>
+    <button type="submit">Submit</button>
+
+
+{% endblock %}
