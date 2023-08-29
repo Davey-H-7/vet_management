@@ -10,16 +10,16 @@ def save (owner):
     owner.id = id
     return owner
 
-# def select_all():
-#     vets =[]
-#     sql = "SELECT * FROM vets"
-#     results = run_sql(sql)
+def select_all():
+    owners =[]
+    sql = "SELECT * FROM owners"
+    results = run_sql(sql)
 
-#     for row in results:
-#         vet = Vet(row['first_name'], row['last_name'], row['position'], row['id'])
-#         vets.append(vet)
-#     vets.sort(key=lambda x: x.last_name)
-#     return vets
+    for row in results:
+        owner = Owner(row['first_name'], row['last_name'], row['contact_no'], row['id'])
+        owners.append(owner)
+    owners.sort(key=lambda x: x.last_name)
+    return owners
 
 # def delete_all():
 #     sql = "DELETE FROM vets"
