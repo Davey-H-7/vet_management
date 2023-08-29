@@ -15,11 +15,13 @@ header a{
 
 header h1{
     float:right;
+    font-family: 'ADLaM Display', cursive;
 }
 
 body { 
     background-image:url(/static/images/background.jpeg);
     margin:0;
+    font-family: 'Noto Sans JP', sans-serif;
 
 }
 

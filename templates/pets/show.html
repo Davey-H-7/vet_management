@@ -1,14 +1,13 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2> {{pet.name}}</h2>
-<h3> Species: {{pet.species}}</h3>
-<h3> Date of birth: {{pet.dob}}</h3>
-<p> Owner Name: {{pet.owner}}</p>
+<h2> <u>{{pet.name}}</u></h2>
+<h3> <b>Species:</b> {{pet.species}}</h3>
+<h3> <b>Date of birth:</b> {{pet.dob}}</h3>
+<p> <b>Owner Name:</b> {{pet.owner}}</p>
 <!-- <img src="../../images/vera.jpg" alt="Pet Image"> -->
-<p> Contact Number: {{pet.contact_no}}</p>
-<p> Treatment Notes: {{pet.treatment_notes}}</p>
-<p> Registered with:</p>
-<p> {{vet.first_name}} {{vet.last_name}}</p>
+<p> <b>Contact Number:</b> {{pet.contact_no}}</p>
+<p> <b>Treatment Notes:</b> {{pet.treatment_notes}}</p>
+<p> <b>Registered with:</b> {{vet.first_name}} {{vet.last_name}}</p>
 <br>
 <a href="/pets/{{pet.id}}/edit">Edit Details</a>
 

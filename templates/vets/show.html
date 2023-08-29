@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2> {{vet.first_name}} {{vet.last_name}}</h2>
-<h3> Position: {{vet.position}}</h3>
-<h3> Patients: </h3>
+<h2> <u>{{vet.first_name}} {{vet.last_name}}</u></h2>
+<h3> <b>Position:</b> {{vet.position}}</h3>
+<h3> <b>Patients:</b></h3>
 
 <ul id ='pet_list'>
     {% for pet in pets %}
