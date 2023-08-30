@@ -1,7 +1,6 @@
 from flask import Flask, render_template, Blueprint, redirect, request
 import repositories.owner_repository as owner_repository
 import repositories.pet_repository as pet_repository
-import pdb
 from models.owner import Owner
 
 owner_blueprint = Blueprint('owner', __name__)

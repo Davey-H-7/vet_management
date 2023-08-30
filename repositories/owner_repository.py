@@ -1,6 +1,5 @@
 from db.run_sql import run_sql
 from models.owner import Owner
-import pdb
 
 def save (owner):
     sql = "INSERT INTO owners (first_name,last_name, contact_no, registered) VALUES (%s, %s, %s, %s) RETURNING *"
@@ -26,7 +25,6 @@ def delete_all():
     run_sql(sql)
 
 def select(id):
-    # pdb.set_trace()
     owner = None
     sql = "SELECT * FROM owners WHERE id = %s"
     values = [id]
@@ -48,7 +46,6 @@ def update(owner):
     run_sql(sql, values)
 
 def owner_for_pet(pet):
-        # pdb.set_trace()
         sql = "SELECT * FROM owners where id = %s"
         values = [pet.owner.id]
         results =run_sql(sql, values)[0]

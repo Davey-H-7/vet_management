@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 <h1> <u>{{pet.name}}</u></h1>
+<a id="edit" href="/pets/{{pet.id}}/edit">Edit Details</a>
 
 <h3> <b>Species:</b> {{pet.species}}</h3>
 
@@ -14,6 +15,7 @@
     <p>Owner not currently registered <span id = 'cross'>&#10060;</span> </p>
     {% endif %}
 </div>
+
 <div id="vet">
     {% if pet.vet == None %}
     <p><b> No Vet assigned</b></p>
@@ -23,11 +25,8 @@
 
 <p> <b>Treatment Notes:</b> {{pet.treatment_notes}}</p>
 </div>
-
-<a id="edit" href="/pets/{{pet.id}}/edit">Edit Details</a>
-
 <form class ="delete-form" action="/pets/{{pet.id}}/delete" method="POST">
-    <button class="trash-button"> Unregister</button>
+    <button class="trash-button"> Remove pet</button>
 </form>
 
 {% endblock %}

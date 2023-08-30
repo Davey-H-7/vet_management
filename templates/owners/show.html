@@ -1,6 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
 <h1> <u>{{owner.first_name}} {{owner.last_name}}</u></h1>
+<a id ='edit' href="/owners/{{owner.id}}/edit">Edit Details</a>
+<br>
 
 <h3> <b>Contact Telephone:</b> {{owner.contact_no}}</h3>
 
@@ -19,11 +21,8 @@
 </ul>
 <br>
 
-<a id ='edit' href="/owners/{{owner.id}}/edit">Edit Details</a>
-<br>
-
 <form class ="delete-form" action="/owners/{{owner.id}}/delete" method="POST">
-    <button class="trash-button"> Remove from records</button>
+    <button class="trash-button"> Remove owner</button>
 </form>
 
 {% endblock %}

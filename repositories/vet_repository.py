@@ -46,7 +46,6 @@ def select(id):
     return vet
 
 def delete(id):
-    # pdb.set_trace()
     sql = "DELETE FROM vets WHERE id = %s"
     values = [id]
     run_sql(sql, values)
@@ -62,7 +61,5 @@ def vet_for_pet(pet):
         values = [pet.vet.id]
         results =run_sql(sql, values)[0]
         vet = Vet(results['first_name'], results['last_name'], results['position'], results['id'])
-    else:
-        vet = None
-    return vet
+        return vet
 

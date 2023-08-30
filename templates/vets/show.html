@@ -1,6 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
 <h1> <u>{{vet.first_name}} {{vet.last_name}}</u></h1>
+<a id = 'edit' href="/vets/{{vet.id}}/edit">Edit Details</a>
+<br>
 <h3> <b>Position:</b> {{vet.position}}</h3>
 <h3> <b>Patients:</b></h3>
 
@@ -10,10 +12,9 @@
     {% endfor %}
 </ul>
 <br>
-<a id = 'edit' href="/vets/{{vet.id}}/edit">Edit Details</a>
-<br>
+
 <form class ="delete-form" action="/vets/{{vet.id}}/delete" method="POST">
-    <button class="trash-button"> Remove Staff Member</button>
+    <button class="trash-button"> Remove staff member</button>
 </form>
 
 {% endblock %}

@@ -1,10 +1,7 @@
 from db.run_sql import run_sql
-from models.vet import Vet
 from models.pet import Pet
-from models.owner import Owner
 import repositories.vet_repository as vet_repository
 import repositories.owner_repository as owner_repository
-import pdb
 
 def save (pet):
     sql = "INSERT INTO pets (name, dob, species, owner_id, vet_id, treatment_notes) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
@@ -38,7 +35,6 @@ def select(id):
     results = run_sql(sql, values)
 
     if results:
-        # pdb.set_trace()
         result = results[0]
         vet = vet_repository.select(result['vet_id'])
         owner = owner_repository.select(result['owner_id'])
@@ -56,7 +52,6 @@ def update(pet):
     run_sql(sql, values)
 
 def pets_for_vet(vet):
-    # pdb.set_trace()
     pets = []
     sql = "SELECT * FROM pets WHERE vet_id = %s"
     values =[vet.id]
@@ -69,7 +64,6 @@ def pets_for_vet(vet):
     return pets
 
 def pets_for_owner(owner):
-    # pdb.set_trace()
     pets = []
     sql = "SELECT * FROM pets WHERE owner_id = %s"
     values =[owner.id]

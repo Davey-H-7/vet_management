@@ -3,6 +3,9 @@ header {
     margin:0;
     padding:5px;
     overflow:hidden;
+    border-style: none none solid none;
+    border-color: black;
+    border-width: medium;
 }
 
 header ul{
@@ -17,9 +20,11 @@ header h1{
     float:right;
     font-family: 'ADLaM Display', cursive;
     font-size: 3vw;
+    margin-right: 50px;
 }
 
 body { 
+    background-color: lightgray;
     background-image:url(/static/images/background.jpeg);
     margin:0;
     font-family: 'Noto Sans JP', sans-serif;
@@ -28,37 +33,41 @@ body {
 
 .container {
     background-color: white;
-    margin: 0 15% 0 15%;
+    margin: 2% 15% 5% 15%;
+    border-color: black;
     border-radius: 10px;
+    border-width: medium;
     position:relative;
+    border-style: solid;
+    padding: 0 0 20px 0;
+
 }
 
 .container #new{
     display:inline-block;
-    position: absolute;
-    top: 1%;
-    right: 1%;
+    top: 40px;
+    right: 90px;
 }
 
 .container h1{
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 40px;
 }
 
 .container h2{
-    margin-left: 10px;
+    margin-left: 40px;
 }
 
 .container h3{
-    margin-left: 10px;
+    margin-left: 40px;
 }
 
 .container p{
-    margin-left: 10px;
+    margin-left: 40px;
 }
 
 .container a{
-    margin-left: 10px;
+    margin-left: 40px;
 }
 
 ul {
@@ -73,7 +82,10 @@ img {
     object-fit: cover;
     border-radius: 50%;
     object-position: 50% 10%;
-    margin: 0 3% 0 3%;
+    margin: 0 3% 3% 3%;
+    border: solid;
+    border-width:thin;
+    border-color: black;
 }
 
 .images{
@@ -119,10 +131,19 @@ textarea {
 
 button{
     margin: 10px;
-    padding: 5px;
+    padding: 10px;
     position:absolute;
-    bottom: 5px;
-    right: 5px;
+    right: 40px;
+    bottom: 20px;
+    background-color: mediumseagreen;
+    border: none;
+    border-radius: 5px;
+
+}
+
+button:hover{
+    background-color: seagreen;
+    transition: 0.7s;
 }
 
 #pet_list li{
@@ -132,16 +153,16 @@ button{
 #vet {
     display: inline-block;
     margin-right: 10%;
+
 }
 
 #owner {
     display: inline-block;
     margin-right: 10%;
+
 }
 
 #edit {
     display:inline-block;
-    position: absolute;
-    top: 1%;
-    right: 1%;
+    margin: 0 5% 0 5%;
 }
